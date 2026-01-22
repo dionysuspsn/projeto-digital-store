@@ -39,7 +39,7 @@
   font-size: 24px;
   color: var(--dark-gray-2);
   margin: 5px 0;
-  font-weight: 400; /* Regular conforme o design system geralmente pede */
+  font-weight: 400; 
 }
 
 .price-old {
@@ -50,7 +50,7 @@
 }
 
 .price-discount {
-  color: var(--dark-gray-2); /* Preço com desconto é Dark Gray 2 */
+  color: var(--dark-gray-2); 
   font-size: 24px;
   font-weight: 700;
 }
