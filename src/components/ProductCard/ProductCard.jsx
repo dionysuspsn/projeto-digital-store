@@ -18,7 +18,7 @@ const ProductCard = ({ image, name, price, priceDiscount }) => {
               <span className="price-old">R$ {price.toFixed(2)}</span>
               <span className="price-discount">R$ {priceDiscount.toFixed(2)}</span>
             </>
-          ) : (
+            ) : (
             <span className="price-regular">R$ {price.toFixed(2)}</span>
           )}
         </div>
