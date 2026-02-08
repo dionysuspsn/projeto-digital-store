@@ -1,0 +1,97 @@
+
+.buy-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    font-family: sans-serif; 
+}
+
+
+.product-title h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1F1F1F; 
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+
+.product-reference {
+    font-size: 12px;
+    color: #666666; 
+    display: block;
+}
+
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars-box {
+    background-color: #F6AA1C; 
+    color: #FFFFFF; 
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.total-reviews {
+    color: #8F8F8F; 
+    font-size: 14px;
+}
+
+
+.price-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.price-normal {
+    font-size: 32px;
+    color: #474747; 
+    font-weight: bold;
+}
+
+.price-riscado {
+    font-size: 16px;
+    color: #CCCCCC; 
+    text-decoration: line-through;
+}
+
+.price-promo {
+    font-size: 32px;
+    color: #474747; 
+    font-weight: bold;
+}
+
+.product-description p {
+    font-size: 14px;
+    color: #474747; 
+    line-height: 1.5;
+}
+
+
+.btn-buy {
+    background-color: #F6AA1C; 
+    color: #FFFFFF; 
+    border: none;
+    border-radius: 8px;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%; 
+    transition: filter 0.2s;
+}
+
+.btn-buy:hover {
+    filter: brightness(0.9); 
+}
