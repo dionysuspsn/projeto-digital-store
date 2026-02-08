@@ -1,17 +1,15 @@
 import React from "react";
-//aqui vao vir os arquivos de Header e Footer dps
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Layout = ({ children }) => {
     return(
-        <div>
-            {/* <Header /> */}
-            <header style={{background: 'var(--primary)', padding: '20px'}}>HEADER (Stub)</header>
-            <main>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <Header />
+            <main style={{ flex: 1, width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
                 {children}
             </main>
-
-            {/* <Footer /> */}
-            <footer style={{background: 'var(--dark-gray)', color: 'white', padding:'20px'}}>FOOTER (Stub)</footer>
+            <Footer />
         </div>
     );
 };

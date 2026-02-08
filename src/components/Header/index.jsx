@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 import shoppingCartIcon from '../../assets/mini-cart.svg';
 import './index.css';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container">
@@ -16,23 +19,31 @@ const Header = () => {
           </div>
 
           <div className="header-user-actions">
-            <a href="/cadastro" className="link-register">Cadastre-se</a>
+            <Link to="/cadastro" className="link-register">Cadastre-se</Link>
             <button className="btn-primary">Entrar</button>
             
             <div className="cart-wrapper">
-              <img src={shoppingCartIcon} alt="Carrinho" />
-              <span className="cart-count">0</span> 
-              
+              <img src={shoppingCartIcon} alt="Carrinho de compras" />
+              <span className="cart-count" aria-label="Total de itens no carrinho">0</span> 
             </div>
+
+            <button 
+              className="menu-toggle" 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu de navegação"
+              aria-expanded={isMenuOpen}
+            >
+              ☰
+            </button>
           </div>
         </div>
 
-        <nav className="header-nav">
+        <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`} aria-label="Menu principal">
           <ul>
-            <li><a href="/" className="active">Home</a></li>
-            <li><a href="/produtos">Produtos</a></li>
-            <li><a href="/categorias">Categorias</a></li>
-            <li><a href="/pedidos">Meus Pedidos</a></li>
+            <li><Link to="/" className="active">Home</Link></li>
+            <li><Link to="/produtos">Produtos</Link></li>
+            <li><Link to="/categorias">Categorias</Link></li>
+            <li><Link to="/pedidos">Meus Pedidos</Link></li>
           </ul>
         </nav>
       </div>

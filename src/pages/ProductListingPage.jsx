@@ -1,4 +1,3 @@
-import Layout from "./Layout";
 import FilterGroup from "../components/FilterGroup/FilterGroup.jsx";
 import ProductListing from "../components/ProductListing/ProductListing.jsx";
 const produtosFake = [
@@ -11,7 +10,7 @@ const produtosFake = [
 
 const ProductListingPage = () => {
     return (
-    <Layout> 
+    <>
         <FilterGroup
 
             title = "Marca"
@@ -22,7 +21,7 @@ const ProductListingPage = () => {
 
         />
         <ProductListing products={produtosFake}/>
-    </Layout> 
+    </>
     )
 }
 export default ProductListingPage;
