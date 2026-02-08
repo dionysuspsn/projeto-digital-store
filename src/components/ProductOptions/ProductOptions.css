@@ -1,0 +1,42 @@
+
+.product-options-container {
+    display: flex;
+    gap: 10px; 
+    margin-top: 10px;
+    flex-wrap: wrap; 
+}
+
+
+.option-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #CCCCCC; 
+    transition: all 0.2s;
+    box-sizing: border-box; 
+}
+
+
+.option-item.square {
+    width: 46px;
+    height: 46px;
+}
+
+
+.option-item.circle {
+    width: 31px;
+    height: 31px;
+}
+
+
+.option-item.text {
+    font-size: 24px;
+    color: #474747; 
+    font-weight: 500;
+}
+
+
+.option-item.selected {
+    border: 2px solid #C92071;
+}
