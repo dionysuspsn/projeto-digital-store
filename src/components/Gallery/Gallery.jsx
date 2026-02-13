@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
-
-import arrowLeft from 'assets/arrow-left.svg';
-import arrowRight from 'assets/arrow-right.svg';
-
 const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
-   
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -23,33 +18,28 @@ const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
 
   return (
     <div className={`gallery-container ${className || ''}`} style={{ width: width }}>
-      
-      
       <div 
         className="main-image-area" 
         style={{ 
-            height: height || '400px',
+            height: height || '400px', 
             borderRadius: radius,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            
             backgroundImage: `url(${images[currentIndex].src})`
         }}
       >
-       
         {currentIndex > 0 && (
             <img 
-                src={arrowLeft} 
+                src="/arrow-left.svg" 
                 alt="Anterior" 
                 className="arrow-icon left" 
                 onClick={prevImage} 
             />
         )}
 
-        
         {currentIndex < images.length - 1 && (
             <img 
-                src={arrowRight} 
+                src="/arrow-right.svg" 
                 alt="Próximo" 
                 className="arrow-icon right" 
                 onClick={nextImage} 
@@ -57,7 +47,6 @@ const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
         )}
       </div>
 
-    
       {showThumbs && (
         <div className="thumbnails-container">
           {images.map((image, index) => (
@@ -76,4 +65,4 @@ const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
   );
 };
 
-export default Gallery;
+export default Gallery; 
