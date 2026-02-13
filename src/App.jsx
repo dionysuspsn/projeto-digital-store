@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Layout from './pages/Layout';
-import HomePage from './pages/homePage';
+import HomePage from './pages/HomePage';
 //import ProductListing from './components/ProductListing/ProductListing';
 import ProductViewPage from './pages/ProductViewPage';
 import ProductListingPage from './pages/ProductListingPage';
@@ -65,6 +65,33 @@ function App() {
           <Layout> 
             <div style={{ padding: '100px', textAlign: 'center' }}>
               <h1>Meus Pedidos (Em breve)</h1>
+            </div>
+          </Layout>
+        } />
+
+        {/* Rota para Login: Item 3.1.4 do README */}
+        <Route path="/login" element={
+          <Layout>
+            <div style={{ padding: '100px', textAlign: 'center' }}>
+              <h1>Login (Em breve)</h1>
+            </div>
+          </Layout>
+        } />
+
+        {/* Rota para Cadastro: Item 3.1.5 do README */}
+        <Route path="/signup" element={
+          <Layout>
+            <div style={{ padding: '100px', textAlign: 'center' }}>
+              <h1>Cadastro (Em breve)</h1>
+            </div>
+          </Layout>
+        } />
+
+        {/* Rota para Carrinho: Item 3.1.3 do README */}
+        <Route path="/cart" element={
+          <Layout>
+            <div style={{ padding: '100px', textAlign: 'center' }}>
+              <h1>Carrinho de Compras (Em breve)</h1>
             </div>
           </Layout>
         } />

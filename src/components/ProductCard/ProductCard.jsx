@@ -1,7 +1,11 @@
 import React from 'react';
 import './ProductCard.css';
 
-const ProductCard = ({ image, name, price, priceDiscount }) => {
+const ProductCard = ({ produto }) => {
+  if (!produto) return null;
+  
+  const { image, name, price, priceDiscount } = produto;
+  
   return (
     <div className="product-card">
       <div className="card-image">
@@ -15,11 +19,11 @@ const ProductCard = ({ image, name, price, priceDiscount }) => {
         <div className="price-container">
           {priceDiscount ? (
             <>
-              <span className="price-old">R$ {price.toFixed(2)}</span>
-              <span className="price-discount">R$ {priceDiscount.toFixed(2)}</span>
+              <span className="price-old">R$ {price?.toFixed(2)}</span>
+              <span className="price-discount">R$ {priceDiscount?.toFixed(2)}</span>
             </>
             ) : (
-            <span className="price-regular">R$ {price.toFixed(2)}</span>
+            <span className="price-regular">R$ {price?.toFixed(2)}</span>
           )}
         </div>
       </div>
