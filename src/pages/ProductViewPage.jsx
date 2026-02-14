@@ -14,7 +14,7 @@ const ProductViewPage = () => {
         { src: '/produc-image-5.jpeg' },
     ];  
     return (
-        <Layout>
+        
             <div className="product-view-container" style={{ padding: '40px', display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
                 
                 
@@ -47,7 +47,7 @@ const ProductViewPage = () => {
                 </BuyBox>
 
             </div>
-        </Layout>
+        
     );
 }
 

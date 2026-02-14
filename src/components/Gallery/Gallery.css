@@ -1,59 +1,82 @@
+/* src/components/Gallery/Gallery.css */
 .gallery-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  position: relative;
+  margin: 20px 0;
 }
 
 .main-image-area {
-    position: relative; 
-    width: 100%;
-    background-color: #f5f5f5; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.arrow-icon {
-    font-size: 30px;
-    color: #474747;
-    cursor: pointer;
-    user-select: none; 
-    padding: 0 15px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: color 0.2s;
-    
-    text-shadow: 0px 0px 5px rgba(255,255,255,0.8); 
+/* ✅ Botões das setas */
+.arrow-button {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
 }
 
-.arrow-icon:hover {
-    color: #C92071; 
+.arrow-button:hover {
+  background: white;
+  transform: scale(1.1);
 }
 
+.arrow-button.left {
+  left: 20px;
+}
 
+.arrow-button.right {
+  right: 20px;
+}
+
+.arrow-button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Miniaturas */
 .thumbnails-container {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
 }
 
 .thumbnail-item {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    overflow: hidden;
-    background-color: #FFFFFF;
+  width: 117px;
+  height: 95px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  flex-shrink: 0;
 }
 
-.thumbnail-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
+.thumbnail-item:hover {
+  border-color: var(--light-gray-2);
 }
 
 .thumbnail-item.active {
-    border: 2px solid #C92071; 
+  border-color: var(--primary); /* ✅ Borda rosa quando ativo */
+}
+
+.thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
