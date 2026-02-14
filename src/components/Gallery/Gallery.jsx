@@ -1,5 +1,8 @@
+// src/components/Gallery/Gallery.jsx
 import React, { useState } from 'react';
 import './Gallery.css';
+import arrowLeft from '../../assets/arrow-left.svg';   // Importe os SVGs
+import arrowRight from '../../assets/arrow-right.svg';
 
 const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,29 +24,31 @@ const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
       <div 
         className="main-image-area" 
         style={{ 
-            height: height || '400px', 
-            borderRadius: radius,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: `url(${images[currentIndex].src})`
+          height: height || '400px', 
+          borderRadius: radius,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundImage: `url(${images[currentIndex].src})`
         }}
       >
         {currentIndex > 0 && (
-            <img 
-                src="/arrow-left.svg" 
-                alt="Anterior" 
-                className="arrow-icon left" 
-                onClick={prevImage} 
-            />
+          <button 
+            className="arrow-button left"
+            onClick={prevImage}
+            aria-label="Imagem anterior"
+          >
+            <img src={arrowLeft} alt="" />
+          </button>
         )}
 
         {currentIndex < images.length - 1 && (
-            <img 
-                src="/arrow-right.svg" 
-                alt="Próximo" 
-                className="arrow-icon right" 
-                onClick={nextImage} 
-            />
+          <button 
+            className="arrow-button right"
+            onClick={nextImage}
+            aria-label="Próxima imagem"
+          >
+            <img src={arrowRight} alt="" />
+          </button>
         )}
       </div>
 
@@ -56,7 +61,7 @@ const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
               className={`thumbnail-item ${index === currentIndex ? 'active' : ''}`}
               style={{ borderRadius: radius }}
             >
-              <img src={image.src} alt={`Thumb ${index}`} />
+              <img src={image.src} alt={`Miniatura ${index + 1}`} />
             </div>
           ))}
         </div>
@@ -65,4 +70,4 @@ const Gallery = ({ className, width, height, radius, showThumbs, images }) => {
   );
 };
 
-export default Gallery; 
+export default Gallery;

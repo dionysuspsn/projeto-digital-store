@@ -17,8 +17,8 @@ const ProductViewPage = () => {
     ];
 
     return (
-        <Layout>
-            <div className="product-view-container" style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        
+            <div className="product-view-container" style={{ padding: '40px', display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
                 
                 
                 <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '1200px' }}>
@@ -62,7 +62,7 @@ const ProductViewPage = () => {
                 </div>
 
             </div>
-        </Layout>
+        
     );
 }
 
