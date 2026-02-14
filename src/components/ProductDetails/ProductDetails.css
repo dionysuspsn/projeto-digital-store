@@ -1,0 +1,19 @@
+.product-details-container {
+    margin-top: 40px;
+    width: 100%;
+    color: #474747; 
+}
+
+.details-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #474747;
+}
+
+.details-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #474747;
+}
