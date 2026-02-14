@@ -1,13 +1,17 @@
 import React from 'react';
-import Layout from '../pages/Layout';
+
+import Layout from '../pages/Layout'; 
+
 import BuyBox from '../components/BuyBox/BuyBox';
 import ProductOptions from '../components/ProductOptions/ProductOptions';
 import Gallery from '../components/Gallery/Gallery';
-
-import ProductDetails from '../components/ProductDetails/ProductDetails'; 
+import ProductDetails from '../components/ProductDetails/ProductDetails';
+import Section from '../components/Section/Section'; 
+import ProductListing from '../components/ProductListing/ProductListing'; 
 
 const ProductViewPage = () => {
     
+   
     const images = [
         { src: '/produc-image-1.jpeg' },
         { src: '/produc-image-2.jpeg' },
@@ -16,14 +20,42 @@ const ProductViewPage = () => {
         { src: '/produc-image-5.jpeg' },
     ];
 
+    
+    const recommendedProducts = [
+        {
+            name: "K-Swiss V8 - Masculino",
+            image: "https://raw.githubusercontent.com/digitalcollegebr/projeto-digital-store/main/assets/product-thumb-1.jpeg",
+            price: 200,
+            priceDiscount: 149.9
+        },
+        {
+            name: "K-Swiss V8 - Feminino",
+            image: "https://raw.githubusercontent.com/digitalcollegebr/projeto-digital-store/main/assets/product-thumb-2.jpeg",
+            price: 200,
+            priceDiscount: 149.9
+        },
+        {
+            name: "K-Swiss V8 - Masculino",
+            image: "https://raw.githubusercontent.com/digitalcollegebr/projeto-digital-store/main/assets/product-thumb-3.jpeg",
+            price: 200,
+            priceDiscount: 149.9
+        },
+        {
+            name: "K-Swiss V8 - Masculino",
+            image: "https://raw.githubusercontent.com/digitalcollegebr/projeto-digital-store/main/assets/product-thumb-4.jpeg",
+            price: 200,
+            priceDiscount: 149.9
+        }
+    ];
+
     return (
-        
-            <div className="product-view-container" style={{ padding: '40px', display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
+       
+        <Layout>
+            <div className="product-view-container" style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 
-                
+               
                 <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '1200px' }}>
                     
-                   
                     <Gallery 
                         width="700px" 
                         height="570px" 
@@ -32,7 +64,6 @@ const ProductViewPage = () => {
                         images={images} 
                     />
 
-                    
                     <BuyBox 
                         name="Tênis Nike Revolution 6 Next Nature Masculino"
                         reference="38416711"
@@ -53,16 +84,27 @@ const ProductViewPage = () => {
                     </BuyBox>
                 </div>
 
-               
-                <div style={{ width: '100%', maxWidth: '1200px' }}>
+             
+                <div style={{ width: '100%', maxWidth: '1200px', marginTop: '40px' }}>
                     <ProductDetails 
                         title="Descrição do produto"
                         content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                     />
                 </div>
 
+               
+                <div style={{ width: '100%', maxWidth: '1200px', marginTop: '60px', marginBottom: '40px' }}>
+                     <Section 
+                        title="Produtos recomendados" 
+                        titleAlign="left" 
+                        link={{ text: "Ver todos", href: "/products" }}
+                    >
+                        <ProductListing products={recommendedProducts} />
+                    </Section>
+                </div>
+
             </div>
-        
+        </Layout>
     );
 }
 
